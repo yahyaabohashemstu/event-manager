@@ -1,73 +1,59 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Event Manager
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+**Event Manager**, olay türleri, kullanıcı tipleri ve zaman sürelerinin yönetildiği kullanıcı dostu bir uygulama geliştirmeyi amaçlamaktadır.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Kullanıcı Tipleri
 
-## Description
+Bu projede iki kullanıcı tipi desteklenmektedir: **Admin** ve **Kullanıcılar**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Olay Tanımlamaları
 
-## Installation
+Olay tanımlamaları arasında **toplantılar, dersler, işler** gibi farklı türler bulunmaktadır.
 
-```bash
-$ yarn install
-```
+## Miktar
 
-## Running the app
+Miktarlar dakika ve saat olarak ölçülmektedir.
 
-```bash
-# development
-$ yarn run start
+## Kullanıcı Hikayesi-1
 
-# watch mode
-$ yarn run start:dev
+**Sisteme Kayıt**
 
-# production mode
-$ yarn run start:prod
-```
+Kullanıcılar, aşağıdaki bilgileri yazılıma girerek sisteme kayıt olabileceklerdir:
 
-## Test
+- Ad
+- Soyad
+- Kullanıcı Adı
+- Şifre
+- TC Kimlik No
+- Telefon
+- E-posta
+- Adres
+- Kullanıcı Tipi
 
-```bash
-# unit tests
-$ yarn run test
+## Kullanıcı Hikayesi-2
 
-# e2e tests
-$ yarn run test:e2e
+**Takvim Uygulaması**
 
-# test coverage
-$ yarn run test:cov
-```
+Kullanıcılar, istedikleri zaman bir olay tanımlaması yapabileceklerdir. Örneğin, bir toplantı ya da bir iş planı oluşturabileceklerdir.
 
-## Support
+## Kullanıcı Hikayesi-3
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+**Günlük Takvim Görüntüleme ve Düzenleme**
 
-## Stay in touch
+Kullanıcılar, uygulamayı açtıklarında istedikleri bir güne gidebilecekler ve seçtikleri günle ilgili toplantı ve/veya işleri görüntüleyebileceklerdir. Ayrıca, istedikleri takdirde bu olayları silip veya güncelleyebileceklerdir.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Kullanıcı Hikayesi-4
 
-## License
+**Olay Hatırlatma**
 
-Nest is [MIT licensed](LICENSE).
+Tanımlanan bir olayın zamanı geldiğinde, kullanıcıya çağrı sesi ile hatırlatma yapılması veya olaydan ... zaman önce hatırlatma gibi seçenekler eklenmiştir.
+
+## Opsiyonel (Farklı Takvimlerin Uygulamaya Eklenmesi)
+
+Bu kısım projenin bir puanı olmamakla birlikte, ek olarak istenirse mesaj aracılığıyla iletişime geçilmesi gerekmektedir.
+
+## Ekranlar
+
+1. Giriş Ekranı / Kullanıcı Kayıt Ekranı
+2. Takvimi Görüntüle
+3. Olay Tanımlama Ekranı
