@@ -54,8 +54,12 @@ Bu kısım projenin bir puanı olmamakla birlikte, ek olarak istenirse mesaj ara
 
 ## Ekranlar
 
+
+
 1. Giriş Ekranı / Kullanıcı Kayıt Ekranı
+
 2. Takvimi Görüntüle
+
 3. Olay Tanımlama Ekranı
 
 
