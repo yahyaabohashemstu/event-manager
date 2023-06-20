@@ -61,4 +61,5 @@ Bu kısım projenin bir puanı olmamakla birlikte, ek olarak istenirse mesaj ara
 
 ## Yapanlar
 
-1. İsmail Arpa
+1. İsmailArpa 
+2. Muhammed Emre Kaya
