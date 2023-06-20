@@ -67,6 +67,7 @@ Bu kısım projenin bir puanı olmamakla birlikte, ek olarak istenirse mesaj ara
 
 ## Yapanlar
 
-1. İsmailArpa 
-2. Muhammed Emre Kaya
-3. Kadir Çatamak
+1. Yahya ABO HASHEM
+2. İsmail Arpa 
+3. Muhammed Emre Kaya
+4. Kadir Çatamak
