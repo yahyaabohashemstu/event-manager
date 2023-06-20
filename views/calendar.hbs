@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/calendar.css" />
+    <title>Takvim Uygulaması</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="right">
+        <div class="today-date">
+          <div class="event-day">Pazartesi</div>
+
+          <div class="event-date">12th december 2022</div>
+        </div>
+        <div class="events"></div>
+        <div class="add-event-wrapper">
+          <div class="add-event-header">
+            <div class="title">Etkinlik Ekle</div>
+            <i class="fas fa-times close"></i>
+          </div>
+          <div class="add-event-body">
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Etkinlik Başlığı"
+                class="event-name"
+              />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Etkinlik Başlangıç Zamanı"
+                class="event-time-from"
+              />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Etkinlik Bitiş Zamanı"
+                class="event-time-to"
+              />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Etkinlik Tipi"
+                class="event-type"
+              />
+            </div>
+          </div>
+          <div class="add-event-footer">
+            <button class="add-event-btn">Etkinlik Ekle</button>
+          </div>
+        </div>
+
+        <div class="right-bottom">
+          <button class="add-event">Etkinlik Ekle</button>
+
+          <div class="right-top">
+            <div class="navigation">
+              <a class="logout--btn" href="#">
+                <div class="logout--btn__text">Çıkış Yap</div>
+              </a>
+            </div>
+          </div>
+          <button class="go-panel">Panel</button>
+        </div>
+      </div>
+      <div class="left">
+        <div class="calendar">
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">Güncel Tarih İçin</div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Pazar</div>
+            <div>Pazartesi</div>
+            <div>Salı</div>
+            <div>Çarşamba</div>
+            <div>Perşembe</div>
+            <div>Cuma</div>
+            <div>Cumartesi</div>
+          </div>
+          <div class="days">
+            <div class="day prev-date">${prevDays - x + 1}</div>
+          </div>
+          <div class="goto-today">
+            <div class="goto">
+              <input
+                type="text"
+                placeholder="gün / yıl"
+                class="goto__date-input"
+              />
+              <button class="goto-btn">Tarihe git</button>
+            </div>
+            <button class="today-btn">Bugün</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/alarm.js"></script>
+    <script src="js/calendar.js"></script>
+  </body>
+</html>

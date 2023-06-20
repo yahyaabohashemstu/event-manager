@@ -7,8 +7,9 @@ import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
 import { RolesGuard } from './roles/roles.guard';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { root } from './config/paths';
-import { User } from './users/user.entity';
+import { User } from './users/entities/user.entity';
+import { EventsModule } from './events/events.module';
+import { Event } from './events/entities/event.entity';
 
 @Module({
   imports: [
@@ -19,11 +20,12 @@ import { User } from './users/user.entity';
       username: 'postgres',
       password: 'postgres',
       database: `event-manager`,
-      entities: [User],
+      entities: [User,Event],
       synchronize: true,
     }),
     AuthModule,
     UsersModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [
