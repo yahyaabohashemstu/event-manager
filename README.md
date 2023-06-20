@@ -46,7 +46,7 @@ Kullanıcılar, uygulamayı açtıklarında istedikleri bir güne gidebilecekler
 
 **Olay Hatırlatma**
 
-Tanımlanan bir olayın zamanı geldiğinde, kullanıcıya çağrı sesi ile hatırlatma yapılması veya olaydan ... zaman önce hatırlatma gibi seçenekler eklenmiştir.
+Tanımlanan bir olayın zamanı geldiğinde, kullanıcıya çağrı sesi ile hatırlatma yapılması veya olaydan ... zaman önce hatırlatma v.b seçenekler eklenmiştir.
 
 ## Opsiyonel (Farklı Takvimlerin Uygulamaya Eklenmesi)
 
