@@ -32,8 +32,7 @@ const btnLogin = document.querySelector(".login__btn"),
   pwFields = document.querySelectorAll(".password"),
   signUp = document.querySelector(".signup-link"),
   login = document.querySelector(".login-link"),
-  registrationFirstName = document.querySelector(".registration__input--firstname"),
-  registrationLastName = document.querySelector(".registration__input--lastname"),
+  registrationName = document.querySelector(".registration__input--name"),
   registrationUsername = document.querySelector(
     ".registration__input--username"
   ),
@@ -66,30 +65,18 @@ pwShowHide.forEach((eyeIcon) => {
   });
 });
 
-window.onload =  function () {
-  btnLogin?.addEventListener("click",async function (e) {
+window.onload = function () {
+  btnLogin?.addEventListener("click", function (e) {
     e.preventDefault();
 
     if (inputLoginPin.value === "" || inputLoginUsername.value === "") {
       return alert("Lütfen tüm alanları doldurun");
     } else {
-      const res = await fetch('/auth/login',{
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: inputLoginUsername.value,
-          password: inputLoginPin.value
-        })
-      })
-      if(res.status === 200){
-        const data = await res.json()
-        localStorage.setItem('access_token', JSON.stringify(data).access_token)
-        window.location = '/';
-      }else{
-        return window.alert("Username veya parola hatalı");
-      }
+      let currentAccount = accounts.find(
+        (acc) => acc.username === inputLoginUsername.value
+      );
+      localStorage.setItem("currentAccount", JSON.stringify(currentAccount));
+
       if (
         currentAccount &&
         currentAccount.password === Number(inputLoginPin.value)
@@ -97,6 +84,7 @@ window.onload =  function () {
         return (window.location.href = "calendar.html");
       } else if (inputLoginPin.value && inputLoginUsername.value) {
         inputLoginPin.value = "";
+        inputLoginUsername.value = "";
         return window.alert("Username veya parola hatalı");
       }
     }
@@ -115,68 +103,55 @@ if (login) {
   });
 }
 
-btnSignUp.addEventListener("click", async() => {
-  const firstname = registrationFirstName.value;
-  const lastname = registrationLastName.value;
+btnSignUp.addEventListener("click", () => {
+  const name = registrationName.value;
   const username = registrationUsername.value;
-  const tc = registrationId.value;
-  const phone = registrationNumber.value;
+  const id = registrationId.value;
+  const number = registrationNumber.value;
   const email = registrationEmail.value;
   const address = registrationAddress.value;
-  const password = (registrationPassword.value);
+  const password = Number(registrationPassword.value);
 
   if (
-    firstname === "" ||
-    lastname === "" ||
+    name === "" ||
     username === "" ||
-    tc === "" ||
-    phone === "" ||
+    id === "" ||
+    number === "" ||
     email === "" ||
     address === "" ||
     password === ""
   ) {
     return alert("Lütfen tüm alanları doldurunuz!");
   }
-const res = await fetch('/auth/register',{
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    first_name: firstname,
-    last_name: lastname,
-    username,
-    tc,
-    phone,
-    email,
-    address,
-    password
-  })
-});
-if(res.status === 200){
-  const data = await res.json()
-  localStorage.setItem('access_token', JSON.stringify(data).access_token)
-  window.location = '/';
-}else{
-  return window.alert(res.data);
-}
-  // newAccounts.forEach((acc) => {
-  //   if (!localStorage.getItem(`${acc.username}`)) {
-  //     localStorage.setItem(`${acc.username}`, JSON.stringify(acc));
-  //     accounts.push(acc);
-  //     saveAccounts();
-  //     newAccounts.pop();
-  //     alert(
-  //       "Kayıt olma işleminiz başarıyla tamamlandı. Giriş  ekranına yönlendiriliyorsunuz.."
-  //     );
-  //     window.location.href = "login.html";
-  //   } else {
-  //     newAccounts.pop();
-  //     return alert(
-  //       ` ${acc.username} Kullanıcı adı daha önce kayıt edilmiştir. Lütfen başka bir kullanıcı adı deneyiniz`
-  //     );
-  //   }
-  // });
+
+  newAccounts.push({
+    name: name,
+    username: username,
+    id: id,
+    number: number,
+    email: email,
+    address: address,
+    password: password,
+    eventsArr: [],
+  });
+
+  newAccounts.forEach((acc) => {
+    if (!localStorage.getItem(`${acc.username}`)) {
+      localStorage.setItem(`${acc.username}`, JSON.stringify(acc));
+      accounts.push(acc);
+      saveAccounts();
+      newAccounts.pop();
+      alert(
+        "Kayıt olma işleminiz başarıyla tamamlandı. Giriş  ekranına yönlendiriliyorsunuz.."
+      );
+      window.location.href = "index.html";
+    } else {
+      newAccounts.pop();
+      return alert(
+        ` ${acc.username} Kullanıcı adı daha önce kayıt edilmiştir. Lütfen başka bir kullanıcı adı deneyiniz`
+      );
+    }
+  });
 });
 
 function saveAccounts() {

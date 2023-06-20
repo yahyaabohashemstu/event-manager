@@ -1,28 +1,6 @@
 const goCalendarBtn = document.querySelector(".btn__calendar");
 const table = document.querySelector("tbody");
-let user = {};
-const checkUser =async ()=>{
-  if(!localStorage.getItem('access_token')){
-    window.location.href = '/login'
-  }else{
-    const res = fetch('/auth/profile',{
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${(localStorage.getItem('access_token'))}`
-      }
-    })
 
-    if(res.status === 200){
-      const data = await res.json()
-      user = data;
-    }
-    else{
-      window.location.href = '/login'
-    }
-  }
-}
-checkUser()
 goCalendarBtn.addEventListener(
   "click",
   () => (window.location.href = "calendar.html")
@@ -36,6 +14,7 @@ function getEvents() {
   eventsArray.push(...JSON.parse(localStorage.getItem("events")));
 }
 getEvents();
+console.log(eventsArray);
 
 let index = 0;
 function addUserHTML(event) {

@@ -48,7 +48,7 @@ outBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (confirm("Çıkış yapmak istediğinize emin misiniz?")) {
     localStorage.removeItem("currentAccount");
-    return (window.location.href = "login.html");
+    return (window.location.href = "index.html");
   }
 });
 
