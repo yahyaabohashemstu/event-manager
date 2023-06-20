@@ -52,6 +52,8 @@ Tanımlanan bir olayın zamanı geldiğinde, kullanıcıya çağrı sesi ile hat
 
 Bu kısım projenin bir puanı olmamakla birlikte, ek olarak istenirse mesaj aracılığıyla iletişime geçilmesi gerekmektedir.
 
+
+
 ## Ekranlar
 
 
